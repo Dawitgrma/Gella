@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content%}
+    <style>
+        fieldset {
+            display: inline-block;
+            border:3px rgb(255, 90, 255) solid;
+            border-radius: 3%;
+        }
+    </style>
+
+<form action="">
+    <fieldset>
+        <p>
+                    <label for="email">You email</label>
+        <input type="text" name="email" id="email">
+        </p>
+        <p>
+                    <label for="password">password</label>
+        <input type="text" name="password" id="password">
+        </p>
+
+
+        <button type="submit">Login</button>
+
+    </fieldset>
+</form>
+{% endblock content%}

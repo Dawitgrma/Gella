@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content%}
+    <style>
+        fieldset {
+            display: inline-block;
+            border:3px rgb(255, 90, 255) solid;
+            border-radius: 3%;
+        }
+    </style>
+
+
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        <fieldset>
+        <legend>upload a picture</legend>
+        {% csrf_token %}
+        {{form.as_p}}
+        <p>
+        <button type="submit">Upload</button>
+    </fieldset>
+    </p>
+    </form>
+{% endblock content%}

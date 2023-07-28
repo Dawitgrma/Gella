@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% block content%}
+    <style>
+        img {
+            width: 55%;
+            height: 55%;
+            border-radius: 2.2%;
+          }
+    </style>
+
+    <section>
+    <figure>
+
+    <img src="{{image.image.url}}" alt="{{image.name}}" title="{{image.name}}" width="{{image.image.width}}" height="{{image.image.height}}" loading="">
+    <div>
+        <figcaption style="display: inline-block;"><h1>{{image.name}} &middot; <a href="/profile/{{image.uploader.id}}">{{image.uploader}}</a></h1></figcaption>
+        <p style="display: inline-block;">{{image.likes}} Likes</p><p>{{image.kind}}</p>
+    </div>
+    <a href="/like/{{image.id}}">Like</a>   
+    <a href="{{image.image.url}}" download>Download</a>    
+    <a href="/delete/{{image.id}}">delete</a> 
+    <p></p>
+    
+    </figure>
+
+
+    </section>
+
+{% endblock content%}
+    
+
+
+

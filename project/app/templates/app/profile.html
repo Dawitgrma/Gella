@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% block content%}
+    <style>
+        img {
+            width: 10%;
+            height: 10%;
+            border-radius: 2.2%;
+          }
+    </style>
+
+    <h1>{{user.username}}</h1>
+    <h2>pictures uploaded by {{user.username}}</h2>
+    {% for upload in uploads %}
+    <a href="/show/{{upload.id}}"><img src="{{upload.image.url}}" alt="{{upload.name}}" title="{{upload.name}}" width="{{upload.image.width}}" height="{{upload.image.height}}" loading="">
+    </a>
+  
+    {% endfor %}
+    <h2>picture you liked</h2>
+    <div>
+        {{fig|safe}}
+    </div>
+    {% for like in likes %}
+    <a href="/show/{{like.picture.id}}">
+        <figure>
+            <img src="{{like.picture.image.url}}" alt="{{like.picture.name}}" title="{{like.name}}" width="{{like.image.width}}" height="{{like.image.height}}" loading="">
+        </figure>
+    </a>
+
+    {% endfor %}
+    {% for kind in kinds%}
+      <p>'{{kind.kind}}-{{kind.kind__count}}'</p>
+      <p>{{kind.picture.name}}</p>
+
+    {% endfor %}
+
+{% endblock content%}
